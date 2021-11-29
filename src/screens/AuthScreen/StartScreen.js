@@ -30,9 +30,9 @@ const StartScreen = ({ navigation }) => {
         backdropOpacity={0}
       >
         <View style={styles.panel}>
-          <Header>Gestion Stock du fruits</Header>
+          <Header>Gestion Stock de poches de sang </Header>
           <Paragraph>
-            Choisir fruitstock permet de vous faciliter la gestion de votre stock fruit.
+            Choisir bloodstock permet de vous faciliter la gestion de votre stock de poches de sang.
           </Paragraph>
           <Button
             mode="contained"

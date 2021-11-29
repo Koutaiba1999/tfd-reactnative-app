@@ -39,18 +39,3 @@ export function registerUser(data) {
 
 }
 //cette fonction pour avoir les détails d'un utilisateur via un token 
-export function getMember(params = {}, userToken) {
-    let defaultParams = {};
-    var config = {
-        method: "post",
-        url: "https://tfd-test-app.herokuapp.com/public/api/auth/me",
-        headers: {
-            'Authorization': userToken,
-            Accept: "application/json",
-            "X-Requested-With": "XMLHttpRequest",
-            "Content-Type": "application/json",
-        },
-        //data: data,
-    };
-    return axios(config);
-}

@@ -3,7 +3,7 @@ const RETRIEVE_DATA = "retrieveData";
 const LOGIN = "login";
 const LOGOUT = "logout";
 const REGISTER = "register";
-const SET_ORGANIZATION = "setOrganization";
+
 
 
 // Actions

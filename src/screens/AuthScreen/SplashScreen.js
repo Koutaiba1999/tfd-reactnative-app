@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    width: 220,
-    height: 110,
+    width: 100,
+    height: 100,
     marginBottom: 8,
   },
 });

@@ -123,7 +123,7 @@ const StockScreenIndex = (props) => {
         actions={[
           {
             icon: "plus",
-            // label: "Par véhicule",
+            
             onPress: () => {
               dispatch(setistrans(true));
             },
@@ -134,7 +134,7 @@ const StockScreenIndex = (props) => {
     );
   };
 
-  // si le stock est vide alors pas du stock si non off afiche les stocks par magasin
+  // si le stock est vide alors pas du stock si non off afiche les stocks par ville
   if (stockState.stocks) {
     if (stockState.stocks.length === 0) {
       return (
@@ -172,7 +172,7 @@ const StockScreenIndex = (props) => {
                       alignItems: "center",
                     }}
                   >
-                    <Title>{"Centre " + item.centre}</Title>
+                    <Title>{item.centre}</Title>
                     {/*  */}
                   </View>
                   <View
@@ -181,7 +181,7 @@ const StockScreenIndex = (props) => {
                       alignItems: "center",
                     }}
                   >
-                    <Title>{"Ville " + item.ville}</Title>
+                    <Title>{"Ville: " + item.ville}</Title>
                   </View>
                   <View>
                     {item.bloodstock
@@ -189,7 +189,7 @@ const StockScreenIndex = (props) => {
                           <View key={i}>
                             <Text>
                               Stock en {itm.categorie} : {"+ =>"}
-                              {itm.souscategorieplus} {"/ - => "}
+                              {itm.souscategorieplus} {"| - => "}
                               {itm.souscategoriemoins}
                             </Text>
                           </View>

@@ -48,7 +48,7 @@ export default function StockTransfert({}) {
       <View style={styles.container}>
         <ScrollView style={{ height }} nestedScrollEnabled={true}>
           <View style={{ alignItems: "center" }}>
-            <Text style={styles.addexpense}>{"transférer du stock"}</Text>
+            <Text style={styles.transfert}>{"transférer du stock"}</Text>
           </View>
           <View style={{ height: "100%", marginTop: 30, marginBottom: 30 }}>
             <ModalAdd />
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: -15,
   },
-  addexpense: {
+  transfert: {
     fontSize: 20,
     fontWeight: "bold",
     marginLeft: 5,

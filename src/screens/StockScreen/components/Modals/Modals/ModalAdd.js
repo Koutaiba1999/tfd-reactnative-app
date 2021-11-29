@@ -59,7 +59,7 @@ export default function ModalAdd({  }) {
       console.log(error.response);
     });
   }
-  //cette fonction permet de tranférer de fruit
+  //cette fonction permet de tranférer du snag
   const updatebloodstock = (data) => {
     updateStock(data, authState.userToken)
       .then((response) => {

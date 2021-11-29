@@ -1,7 +1,7 @@
 import axios from "axios";
 import _ from "lodash";
 
-// appel au api getStock pour avoir les stock par magasins
+// appel au api getStock pour avoir les stock par ville
 
 export function getDataStock(params = {}, userToken = null) {
     var data = "";
@@ -20,7 +20,7 @@ export function getDataStock(params = {}, userToken = null) {
     return axios(config);
 }
 
-//appel au api transformstock pour faire un transfert du stock d'un magasin à un autre
+//appel au api transformstock pour faire un transfert du stock d'un centre à un autre 
 export function updateStock(data, userToken) {
     var data = JSON.stringify({
         ville1: data.ville1.value,

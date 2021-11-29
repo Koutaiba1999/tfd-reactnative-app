@@ -18,7 +18,7 @@ import TextInput from "../../components/TextInput";
 import { theme } from "../../core/theme";
 import { emailValidator, passwordValidator } from "../../helpers/authValidator";
 
-import { retrieveToken, getMember } from "./services/auth";
+import { retrieveToken, } from "./services/auth";
 
 import { AuthContext } from "../../helpers/context";
 import SlidingUpPanel from "rn-sliding-up-panel";
@@ -61,26 +61,12 @@ const LoginScreen = ({ navigation }) => {
         }
         let userToken = data.token;
         signIn(userToken, member);
-        
-        // getMember({}, userToken)
-        //   .then((response) => {
-        //     let member = response.data;
-        //     //console.log(response.data)
-        //     signIn(userToken, member);
-        //   })
-        //   .catch((error) => {
-        //     Alert.alert(error)
-        //     setMessage("Membre introuvable");
-        //     setTimeout(() => {
-        //       setLoading(false);
-        //     }, 1000);
-        //     Alert.alert("error", error.response);
-        //   });
+    
       })
       .catch((error) => {
-        
-        setEmail({ ...email, error: " " });
-        setPassword({ ...password, error: " " });
+        console.log(error.response);
+        setEmail({ ...email, error: error.response.data });
+        setPassword({ ...password, error: error.response.data });
         setMessage("les informations d'identification invalides");
         setTimeout(() => {
           setLoading(false);
@@ -109,10 +95,7 @@ const LoginScreen = ({ navigation }) => {
             onChangeText={(text) => setEmail({ value: text, error: "" })}
             error={!!email.error}
             errorText={email.error}
-            //autoCapitalize="none"
-            //autoCompleteType="email"
-            //textContentType="emailAddress"
-            //keyboardType="email-address"
+         
           />
           <TextInput
             label="Mot de passe"

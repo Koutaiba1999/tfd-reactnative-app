@@ -11,8 +11,7 @@ import { theme } from "../../core/theme";
 import { emailValidator } from "../../helpers/emailValidator";
 import { passwordValidator } from "../../helpers/passwordValidator";
 import { nameValidator } from "../../helpers/nameValidator";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import SafeAreaView from "react-native-safe-area-view";
+
 import {
   TouchableOpacity,
   StyleSheet,
@@ -39,6 +38,7 @@ const RegisterScreen = ({ navigation }) => {
   const [erroremail, setErroremail] = useState([]);
   const [errorname, setErrorname] = useState([]);
   const [errorpassword, setErrorpassword] = useState([]);
+ // cette fonction permet de créer un nouveau compte utilisateur 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name.value);
     const usernameError = nameValidator(username.value);
