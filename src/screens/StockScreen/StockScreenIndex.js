@@ -32,6 +32,7 @@ const StockScreenIndex = (props) => {
   const authState = useSelector((state) => state.authState);
   const stockState = useSelector((state) => state.stockState);
   const [state, setState] = React.useState({ open: false });
+  // les titres du tableau 
   const [HeadTable, setHeadTable] = useState([
     "Ville",
     "A plus|moins",
@@ -40,6 +41,7 @@ const StockScreenIndex = (props) => {
     "O plus|moins",
     "Total",
   ]);
+  //le contenue du tableau
   const [DataTable, setDataTable] = useState([
     ["1", "2", "3", "4", "5", "30"],
     ["a", "b", "c", "d", "e", "20"],
@@ -53,6 +55,7 @@ const StockScreenIndex = (props) => {
   // on récupère le stock par magasin lorsque l'écran stock s'affiche
   useEffect(() => {
     console.log("get data from useeffect");
+    //cette condition pour savoir si il ya une opération du transfert du stock ou non 
     if (stockState.update) {
       dispatch(setupdate(false));
     }

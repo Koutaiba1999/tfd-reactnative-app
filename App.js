@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 function MainApp() {
   return <Index />;
 }
+// c'est la component root 
 const App = () => {
   return (
     <Provider store={store}>

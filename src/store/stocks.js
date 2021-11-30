@@ -22,6 +22,7 @@ export const setmodalLoading = (value) => {
         modalLoading: value,
     };
 };
+//cette variable pour faire la mise à jour lorsque on fait le transfet du stoock en poche du sang 
 export const setupdate = (value) => {
         return {
             type: "update",

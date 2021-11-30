@@ -20,14 +20,17 @@ import { getDataStock, updateStock } from "../../../../../services/stocks";
 export default function ModalAdd({  }) {
   const state = useSelector((state) => state.stockState);
   const dispatch = useDispatch();
-
+// c'est pour la catégorie selectionné 
   const [categorie, setcat] = useState(null);
+  // c'est pour la souscatégorie selectionné 
   const [sscategorie, setsscat] = useState(null);
+  // c'est pour la ville de départ selectionné 
   const [ville1, setville1] = useState(null);
+  // c' est pouer la catégorie selectionné 
   const [ville2, setville2] = useState(null);
 
   const authState = useSelector((state) => state.authState);
-
+// la liste des villes 
   const [villes, setstates] = useState([
     { id: "1", label: "Paris", value: "Paris" },
     { id: "2", label: "Marseille", value: "Marseille" },
@@ -35,6 +38,7 @@ export default function ModalAdd({  }) {
     { id: "4", label: "Dijon", value: "Dijon" },
     { id: "5", label: "Nice", value: "Nice" },
   ]);
+  //la liste des catégories du sang  
   const [categories, setstates2] = useState([
     { id: "1", label: "A", value: "A" },
     { id: "2", label: "B", value: "B" },
@@ -42,13 +46,14 @@ export default function ModalAdd({  }) {
     { id: "4", label: "O", value: "O" },
     
   ]);
+  //la liste des sous catégories du sang 
   const [souscategories, setstates02] = useState([
     { id: "1", label: "Plus", value: "Plus" },
     { id: "2", label: "Moins", value: "Moins" },
     
     
   ]);
-  // cette fonction est  utilisé pour la mise à jour de stock 
+  // cette fonction est  utilisé pour la mise à jour de stock en poche du sang 
   const getAlltheStock = ()=>{
     getDataStock({}, authState.userToken).then((response) => {
       console.log(response.data);
@@ -59,7 +64,7 @@ export default function ModalAdd({  }) {
       console.log(error.response);
     });
   }
-  //cette fonction permet de tranférer du snag
+  //cette fonction permet de tranférer du sang
   const updatebloodstock = (data) => {
     updateStock(data, authState.userToken)
       .then((response) => {

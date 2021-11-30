@@ -36,19 +36,10 @@ const LoginScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const { signIn } = React.useContext(AuthContext);
   
-
+//cette fonction permet de faire l appel au api login pour vérifier les informations de l'utilisateur
   const onLoginPressed = () => {
     setLoading(true);
-    // const emailError = emailValidator(email.value);
-    // const passwordError = passwordValidator(password.value);
-    // if (emailError || passwordError) {
-    //   setEmail({ ...email, error: emailError });
-    //   setPassword({ ...password, error: passwordError });
-    //   setTimeout(() => {
-    //     setLoading(false);
-    //   }, 1000);
-    //   return;
-    // }
+    
     console.log('test from login'+email.value+ " "+ password.value)
     retrieveToken({ email: email.value, password: password.value })
       .then((response) => {
